@@ -89,9 +89,7 @@
                                 <a href="peramalan.php"><i class="zmdi zmdi-album"></i> <span> Peramalan </span> </a>
                             </li>
 
-                            <li class="has-submenu">
-                                <a href="#"><i class="zmdi zmdi-collection-text"></i><span> Laporan </span> </a>
-                            </li>
+                           
                             
                         </ul>
                         <!-- End navigation menu  -->
