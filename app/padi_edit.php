@@ -14,25 +14,24 @@ $edit = tampil("SELECT * FROM padi WHERE id = $id")[0];
 
 if (isset($_POST['update'])) {
 	if (update($id,$_POST) > 0) {
-		
+
 		echo "<script>"
 		. "alert('Data Berasil Di Update');"
 		. "document.location.href = 'master_data.php';"
 		. "</script>";
 	}
 	else{
-		
+
 		echo "<script>"
 		. "alert('Data Gagal Di Update')"
 		. "</script>";
 	}
-	
-	
+
+
 }
 
 include '../templating/atas.php';
 include '../templating/navigation_bar.php';
-
 
 
 ?>
@@ -62,10 +61,10 @@ include '../templating/navigation_bar.php';
 						<fieldset class="form-group">
 							<label for="exampleInputEmail1">Hasil Penen</label>
 							<input type="number" class="form-control" id="exampleInputEmail1"
-							name="hasil_panen" 
+							name="hasil_panen"
 							placeholder="Masukkan Hasil Panen" value="<?=$edit['hasil_panen']?>" required>
 						</fieldset>
-						
+
 						<button type="submit" name="update" class="btn btn-warning">Update</button>
 					</form>
 				</div>

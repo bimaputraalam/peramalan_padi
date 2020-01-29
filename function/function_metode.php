@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost","root","","stc");
+$link = mysqli_connect("localhost","root","","bima_padi");
 
 
 // metode fuzzy time series cheng-----------------------------------------------
@@ -431,7 +431,7 @@ function tambah($data){
   $tanggal = $tanggal.'-01';
 
   $hasil_panen = $data['hasil_panen'];
-  
+
 
   mysqli_query($link,"INSERT INTO padi VALUES ('','$tanggal','$hasil_panen')");
 
@@ -476,7 +476,7 @@ function y_tanggal(){
   $jdata  = count($data);
 
   $y = "[";
-  for ($i=0; $i < $jdata-1 ; $i++) { 
+  for ($i=0; $i < $jdata-1 ; $i++) {
     $y = $y."'".$data[$i]['tanggal']."',";
   }
   $y = $y."'".$data[$jdata-1]['tanggal']."']";
@@ -486,7 +486,7 @@ function y_tanggal(){
 }
 // end grafik
 
-// x 
+// x
 function x_nilai_01(){ // aktul
   $aktual = peramalanBerdasarkanRelasi();
   $jaktual = count($aktual);
@@ -495,11 +495,11 @@ function x_nilai_01(){ // aktul
 
 
   $x = "['$data',";
-  for ($i=0; $i < $jaktual-2 ; $i++) { 
+  for ($i=0; $i < $jaktual-2 ; $i++) {
     $x = $x."'".$aktual[$i][1]."',";
   }
   $x = $x."'".$aktual[$jaktual-2][1]."']";
-  
+
   return $x;
 }
 
@@ -509,11 +509,11 @@ function x_nilai_02(){ // peramalan
   // return $peramalan;
 
   $x = "['0',";
-  for ($i=0; $i < $jperamalan-2 ; $i++) { 
+  for ($i=0; $i < $jperamalan-2 ; $i++) {
     $x = $x."'".$peramalan[$i][2]."',";
   }
   $x = $x."'".$peramalan[$jperamalan-2][2]."',".$peramalan[$jperamalan-1][2]."]";
-  
+
   return $x;
 }
 
